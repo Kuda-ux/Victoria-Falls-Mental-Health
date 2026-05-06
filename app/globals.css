@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1B4332;
+  --color-secondary: #D4AF37;
+  --color-accent: #C0784A;
+  --color-mist: #E8F4F1;
+  --color-dark: #0D1F16;
+  --color-text: #2D2D2D;
+}
+
+html, body { background: #fff; color: var(--color-text); }
+body { font-family: var(--font-dm-sans), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+::selection { background: rgba(212,175,55,0.35); color: #0D1F16; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #E8F4F1; }
+::-webkit-scrollbar-thumb { background: #1B4332; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #0D1F16; }
+
+@layer components {
+  .container-luxe { @apply max-w-7xl mx-auto px-6 md:px-10; }
+  .heading-display { @apply font-display tracking-tight; }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-medium tracking-wide text-primary-dark bg-secondary hover:bg-[#e6c14e] transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(212,175,55,0.6)] hover:shadow-[0_20px_45px_-12px_rgba(212,175,55,0.7)] hover:-translate-y-0.5;
+  }
+  .btn-ghost-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-medium tracking-wide border border-secondary/70 text-secondary hover:bg-secondary hover:text-primary-dark transition-all duration-300;
+  }
+  .btn-ghost-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-medium tracking-wide border border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-300;
+  }
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+  .section { @apply py-20 md:py-28; }
+  .eyebrow { @apply uppercase tracking-[0.3em] text-xs font-medium text-secondary; }
+}
+
+/* Mist particle animation */
+.mist-layer {
+  background-image:
+    radial-gradient(800px 200px at 20% 30%, rgba(255,255,255,0.18), transparent 60%),
+    radial-gradient(600px 180px at 80% 60%, rgba(255,255,255,0.12), transparent 60%);
+  filter: blur(8px);
+}
+
+/* Decorative gold frame */
+.gold-frame {
+  position: relative;
+}
+.gold-frame::before, .gold-frame::after {
+  content: '';
+  position: absolute;
+  width: 60px; height: 60px;
+  border: 2px solid #D4AF37;
+}
+.gold-frame::before { top: -14px; left: -14px; border-right: 0; border-bottom: 0; }
+.gold-frame::after { bottom: -14px; right: -14px; border-left: 0; border-top: 0; }
