@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Check } from 'lucide-react';
@@ -29,11 +30,11 @@ export default function ServicesAccordion() {
               aria-expanded={isOpen}
             >
               <span
-                className={`shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-full transition-colors ${
-                  isOpen ? 'bg-secondary text-primary-dark' : 'bg-primary/10 text-primary'
+                className={`shrink-0 inline-flex items-center justify-center w-14 h-14 rounded-2xl text-white shadow-luxe bg-gradient-to-br ${s.accent} transition-transform ${
+                  isOpen ? 'scale-110' : ''
                 }`}
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-6 h-6" />
               </span>
               <span className="flex-1">
                 <span className="block font-display text-2xl md:text-3xl text-primary leading-tight">
@@ -57,16 +58,28 @@ export default function ServicesAccordion() {
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 md:px-7 pb-7 grid md:grid-cols-2 gap-6 md:gap-10">
-                    <p className="text-ink/80 leading-relaxed">{s.description}</p>
-                    <ul className="space-y-2.5">
-                      {s.bullets.map((b) => (
-                        <li key={b} className="flex gap-3 text-ink/85">
-                          <Check className="w-4 h-4 text-secondary mt-1 shrink-0" />
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="px-6 md:px-7 pb-7 grid md:grid-cols-[1.1fr_1fr] gap-8 md:gap-10 items-start">
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-luxe">
+                      <Image
+                        src={s.image}
+                        alt={s.title}
+                        fill
+                        sizes="(min-width:768px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                      <div className={`absolute inset-0 bg-gradient-to-tr ${s.accent} mix-blend-multiply`} />
+                    </div>
+                    <div>
+                      <p className="text-ink/80 leading-relaxed">{s.description}</p>
+                      <ul className="space-y-2.5 mt-5">
+                        {s.bullets.map((b) => (
+                          <li key={b} className="flex gap-3 text-ink/85">
+                            <Check className="w-4 h-4 text-secondary mt-1 shrink-0" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                   <div className="px-6 md:px-7 pb-7">
                     <a

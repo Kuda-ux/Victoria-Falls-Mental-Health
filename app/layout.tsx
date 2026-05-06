@@ -1,18 +1,24 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, DM_Sans, Playfair_Display } from 'next/font/google';
+import { Fraunces, Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import PageTransition from '@/components/PageTransition';
 
-const cormorant = Cormorant_Garamond({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-cormorant',
+  weight: ['400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
+  variable: '--font-fraunces',
   display: 'swap'
 });
-const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' });
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap'
+});
 const playfair = Playfair_Display({
   subsets: ['latin'],
   style: ['italic', 'normal'],
@@ -43,7 +49,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${inter.variable} ${playfair.variable}`}>
       <body className="font-body antialiased">
         <Navbar />
         <PageTransition>{children}</PageTransition>

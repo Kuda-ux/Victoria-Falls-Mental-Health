@@ -10,6 +10,8 @@ export type Service = {
   description: string;
   bullets: string[];
   icon: LucideIcon;
+  image: string;
+  accent: string;
 };
 
 export const services: Service[] = [
@@ -25,7 +27,9 @@ export const services: Service[] = [
       'Self-esteem and identity work',
       'Cognitive Behavioural Therapy (CBT)'
     ],
-    icon: Brain
+    icon: Brain,
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80',
+    accent: 'from-teal-500/80 to-emerald-600/80'
   },
   {
     slug: 'relationships',
@@ -39,7 +43,9 @@ export const services: Service[] = [
       'Communication and conflict resolution',
       'Personal development coaching'
     ],
-    icon: Heart
+    icon: Heart,
+    image: 'https://images.unsplash.com/photo-1521119989659-a83eee488004?w=1200&q=80',
+    accent: 'from-rose-500/80 to-pink-600/80'
   },
   {
     slug: 'group-therapy',
@@ -53,7 +59,9 @@ export const services: Service[] = [
       'Youth empowerment programmes',
       'Community wellness outreach'
     ],
-    icon: Users
+    icon: Users,
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80',
+    accent: 'from-amber-500/80 to-orange-600/80'
   },
   {
     slug: 'corporate',
@@ -67,7 +75,9 @@ export const services: Service[] = [
       'Leadership wellness coaching',
       'Mental health policy advisory'
     ],
-    icon: Building2
+    icon: Building2,
+    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
+    accent: 'from-sky-500/80 to-indigo-600/80'
   },
   {
     slug: 'retreats',
@@ -81,7 +91,9 @@ export const services: Service[] = [
       'Nature therapy and mindful movement',
       'Holistic wellness rituals'
     ],
-    icon: Mountain
+    icon: Mountain,
+    image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80',
+    accent: 'from-emerald-500/80 to-teal-700/80'
   },
   {
     slug: 'virtual',
@@ -95,7 +107,9 @@ export const services: Service[] = [
       'Online support groups',
       'Crisis check-ins'
     ],
-    icon: Globe
+    icon: Globe,
+    image: 'https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=1200&q=80',
+    accent: 'from-violet-500/80 to-fuchsia-600/80'
   },
   {
     slug: 'psychoeducation',
@@ -109,7 +123,9 @@ export const services: Service[] = [
       'Public awareness campaigns',
       'Resource development'
     ],
-    icon: BookOpen
+    icon: BookOpen,
+    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80',
+    accent: 'from-amber-400/80 to-yellow-600/80'
   },
   {
     slug: 'workshops',
@@ -123,7 +139,9 @@ export const services: Service[] = [
       'Mental health first aid training',
       'Bespoke seminar design'
     ],
-    icon: GraduationCap
+    icon: GraduationCap,
+    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200&q=80',
+    accent: 'from-cyan-500/80 to-blue-600/80'
   },
   {
     slug: 'partnerships',
@@ -137,7 +155,9 @@ export const services: Service[] = [
       'Schools and university partnerships',
       'Research and advocacy'
     ],
-    icon: Handshake
+    icon: Handshake,
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80',
+    accent: 'from-orange-500/80 to-red-600/80'
   }
 ];
 
@@ -197,45 +217,45 @@ export const retreats: Retreat[] = [
     description:
       'A deeply personal, one-on-one healing journey curated entirely around you, your story and your goals.',
     duration: '3–7 days',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200'
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80'
   },
   {
     title: 'Couples Retreat',
     description:
       'Reconnect, repair and renew with guided couples therapy framed by the restorative beauty of Victoria Falls.',
     duration: '4–5 days',
-    image: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200'
+    image: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1400&q=80'
   },
   {
     title: 'Corporate Retreat',
     description:
       'Strategic wellness experiences for executive teams seeking clarity, cohesion and sustainable performance.',
     duration: '3–5 days',
-    image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200'
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80'
   },
   {
     title: 'Group Retreat',
     description:
       'Curated cohorts of 6–12 participants moving through transformation together in a held, intentional space.',
     duration: '5–7 days',
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200'
+    image: 'https://images.unsplash.com/photo-1543269664-647b9bbd96bf?w=1400&q=80'
   }
 ];
 
 export const galleryImages: { src: string; category: 'Retreats' | 'Sessions' | 'Events' }[] = [
   { src: '/images/hero-1.jpeg', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200', category: 'Sessions' },
-  { src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200', category: 'Sessions' },
-  { src: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200', category: 'Events' },
-  { src: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1200', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1504457047772-27faf1c00561?w=1200', category: 'Sessions' },
-  { src: 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=1200', category: 'Events' },
-  { src: 'https://images.unsplash.com/photo-1483794344563-d27a8d18014e?w=1200', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=1200', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200', category: 'Events' }
+  { src: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1400&q=80', category: 'Retreats' },
+  { src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1400&q=80', category: 'Sessions' },
+  { src: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=1400&q=80', category: 'Retreats' },
+  { src: 'https://images.unsplash.com/photo-1521119989659-a83eee488004?w=1400&q=80', category: 'Sessions' },
+  { src: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1400&q=80', category: 'Retreats' },
+  { src: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1400&q=80', category: 'Events' },
+  { src: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80', category: 'Retreats' },
+  { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400&q=80', category: 'Sessions' },
+  { src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&q=80', category: 'Events' },
+  { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80', category: 'Events' },
+  { src: 'https://images.unsplash.com/photo-1543269664-647b9bbd96bf?w=1400&q=80', category: 'Retreats' },
+  { src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1400&q=80', category: 'Events' }
 ];
 
 export const faqs: { q: string; a: string }[] = [
