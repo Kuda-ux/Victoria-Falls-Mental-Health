@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       'Healing. Growth. Transformation. Mental health and wellness experiences inspired by Victoria Falls.',
     url: 'https://vicfallsmentalhealth.co.zw',
     siteName: 'Victoria Falls Mental Health',
-    images: [{ url: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200' }],
+    images: [{ url: '/images/hero-1.jpeg' }],
     locale: 'en_ZW',
     type: 'website'
   },
