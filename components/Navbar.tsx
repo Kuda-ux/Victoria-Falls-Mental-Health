@@ -33,10 +33,10 @@ export default function Navbar() {
         )}
       >
         <div className="container-luxe flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
             <span
               className={cn(
-                'inline-flex items-center justify-center w-12 h-12 rounded-full overflow-hidden ring-2 transition-all',
+                'shrink-0 inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden ring-2 transition-all',
                 scrolled ? 'ring-secondary/40 bg-white' : 'ring-white/30 bg-white/10 backdrop-blur-md'
               )}
             >
@@ -49,14 +49,13 @@ export default function Navbar() {
                 priority
               />
             </span>
-            <span className="font-display text-xl md:text-[1.35rem] leading-tight">
-              <span className={cn('font-semibold block', scrolled ? 'text-primary' : 'text-white')}>
+            <span className="font-display text-base sm:text-xl md:text-[1.35rem] leading-tight min-w-0">
+              <span className={cn('font-semibold block truncate', scrolled ? 'text-primary' : 'text-white')}>
                 Victoria Falls
               </span>
               <span
                 className={cn(
-                  'block text-[10px] tracking-[0.35em] uppercase mt-0.5',
-                  scrolled ? 'text-secondary' : 'text-secondary'
+                  'hidden sm:block text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.35em] uppercase mt-0.5 text-secondary'
                 )}
               >
                 Mental Health & Wellness

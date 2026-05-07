@@ -37,7 +37,7 @@ export default function PageHero({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.7 }}
-          className="font-display text-white text-5xl md:text-7xl leading-[1.05]"
+          className="font-display text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05]"
         >
           {title}
         </motion.h1>
