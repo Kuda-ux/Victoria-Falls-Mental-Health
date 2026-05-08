@@ -1,24 +1,17 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowRight, PlayCircle } from 'lucide-react';
+import VideoBackground from '@/components/VideoBackground';
 
-const words = ['Healing.', 'Growth.', 'Transformation.'];
+const words = ['Mind.', 'Body.', 'Soul.'];
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-primary-dark">
-      {/* Background image — reliable nature/water scene */}
-      <Image
-        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=2000&q=80"
-        alt="Lush forest landscape"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
-      {/* Layered colorful overlays for depth & legibility */}
+      {/* Cinematic Victoria Falls video backdrop with poster fallback */}
+      <VideoBackground src="/footage.mp4" poster="/images/hero-1.jpeg" posterAlt="Victoria Falls" />
+      {/* Layered overlays for depth & legibility */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-primary-dark/70 to-primary-dark/95" />
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 via-transparent to-secondary/15 mix-blend-overlay" />
       <div className="absolute inset-0 mist-layer animate-mist" />
@@ -65,7 +58,7 @@ export default function Hero() {
               {i === 1 ? (
                 <span className="italic font-light gradient-text-sunset">{w}</span>
               ) : (
-                w
+                <span>{w}</span>
               )}
             </motion.span>
           ))}

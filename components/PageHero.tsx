@@ -1,21 +1,23 @@
 'use client';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import VideoBackground from '@/components/VideoBackground';
 
 export default function PageHero({
   title,
   subtitle,
   image,
+  video = '/footage.mp4',
   overlay = 'forest'
 }: {
   title: string;
   subtitle?: string;
   image: string;
+  video?: string;
   overlay?: 'forest' | 'gold';
 }) {
   return (
     <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
-      <Image src={image} alt="" fill priority className="object-cover" />
+      <VideoBackground src={video} poster={image} />
       <div
         className={`absolute inset-0 ${
           overlay === 'gold'

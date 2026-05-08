@@ -10,6 +10,7 @@ export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIC
   "Hello, I'd like to enquire about your services."
 )}`;
 export const PHONE = '0772111421';
-export const EMAIL = 'info@vicfallsmentalhealth.co.zw';
-export const ADDRESS = '206 Contours, Vic Falls Estate, Kazungula Road, Victoria Falls, Zimbabwe';
+export const EMAIL = 'vicfallsmentalhealthandwellnes@gmail.com';
+export const ADDRESS_LINES = ['Contours, VicFalls Estate', 'Kazungula Road', 'Victoria Falls'];
+export const ADDRESS = ADDRESS_LINES.join(', ');
 export const SOCIAL = '@vicfallsmentalhealth';

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 import { navLinks } from '@/lib/data';
-import { ADDRESS, PHONE, EMAIL, SOCIAL } from '@/lib/utils';
+import { ADDRESS_LINES, PHONE, EMAIL, SOCIAL } from '@/lib/utils';
 
 export default function Footer() {
   return (
@@ -38,7 +38,14 @@ export default function Footer() {
         <div>
           <h4 className="font-display text-xl text-white mb-4">Visit & Connect</h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex gap-3"><MapPin className="w-4 h-4 text-secondary mt-1 shrink-0" /><span>{ADDRESS}</span></li>
+            <li className="flex gap-3">
+              <MapPin className="w-4 h-4 text-secondary mt-1 shrink-0" />
+              <span className="not-italic">
+                {ADDRESS_LINES.map((line, i) => (
+                  <span key={line} className="block leading-snug">{line}</span>
+                ))}
+              </span>
+            </li>
             <li className="flex gap-3"><Phone className="w-4 h-4 text-secondary mt-1 shrink-0" /><a href={`tel:${PHONE}`} className="hover:text-secondary">{PHONE}</a></li>
             <li className="flex gap-3"><Mail className="w-4 h-4 text-secondary mt-1 shrink-0" /><a href={`mailto:${EMAIL}`} className="hover:text-secondary break-all">{EMAIL}</a></li>
             <li className="flex gap-3"><Instagram className="w-4 h-4 text-secondary mt-1 shrink-0" /><span>{SOCIAL}</span></li>
