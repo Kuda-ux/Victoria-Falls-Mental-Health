@@ -15,7 +15,7 @@ export default function ServicesPage() {
       <PageHero
         title="Our Services"
         subtitle="Comprehensive, compassionate mental health support — thoughtfully designed for individuals, couples, families and organisations."
-        image="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1920"
+        image="/images/service-psychotherapy.jpg"
       />
       <section className="section bg-white">
         <div className="container-luxe max-w-3xl text-center mb-14">

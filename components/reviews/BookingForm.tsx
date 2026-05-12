@@ -26,18 +26,46 @@ export default function BookingForm() {
     formState: { errors, isSubmitting }
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
-  const onSubmit = (data: FormValues) => {
-    const text =
-      `Hello, I'd like to book a consultation.%0A%0A` +
-      `*Name:* ${data.fullName}%0A` +
-      `*Email:* ${data.email}%0A` +
-      `*Phone:* ${data.phone}%0A` +
-      `*Service:* ${data.service}%0A` +
-      (data.date ? `*Preferred date:* ${data.date}%0A` : '') +
-      (data.message ? `*Message:* ${data.message}` : '');
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
-    window.open(url, '_blank');
-    setSubmitted(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const onSubmit = async (data: FormValues) => {
+    setError(null);
+    try {
+      // 1. Email the booking to the gmail account via FormSubmit (no backend required)
+      const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `New Booking Enquiry — ${data.fullName}`,
+          _template: 'table',
+          _captcha: 'false',
+          Name: data.fullName,
+          Email: data.email,
+          Phone: data.phone,
+          Service: data.service,
+          PreferredDate: data.date || '—',
+          Message: data.message || '—'
+        })
+      });
+      if (!res.ok) throw new Error('Email send failed');
+
+      // 2. Also offer WhatsApp continuation in a new tab
+      const text =
+        `Hello, I'd like to book a consultation.%0A%0A` +
+        `*Name:* ${data.fullName}%0A` +
+        `*Email:* ${data.email}%0A` +
+        `*Phone:* ${data.phone}%0A` +
+        `*Service:* ${data.service}%0A` +
+        (data.date ? `*Preferred date:* ${data.date}%0A` : '') +
+        (data.message ? `*Message:* ${data.message}` : '');
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+
+      setSubmitted(true);
+    } catch (e) {
+      setError(
+        'We could not send your enquiry by email. Please try the WhatsApp option below or email us directly.'
+      );
+    }
   };
 
   const inputCls =
@@ -61,9 +89,15 @@ export default function BookingForm() {
         {submitted ? (
           <div className="mt-8 flex items-center gap-3 rounded-xl bg-mist p-5 text-primary">
             <CheckCircle2 className="w-6 h-6 text-secondary" />
-            <p>Your enquiry has been sent. We&apos;ll be in touch shortly.</p>
+            <p>Your enquiry has been emailed to our team. We&apos;ll be in touch within one working day.</p>
           </div>
         ) : (
+          <>
+          {error && (
+            <div className="mt-6 rounded-xl bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+              {error}
+            </div>
+          )}
           <div className="mt-7 grid sm:grid-cols-2 gap-5">
             <div className="sm:col-span-2">
               <label className="text-xs uppercase tracking-[0.2em] text-primary/70">Full Name</label>
@@ -104,10 +138,11 @@ export default function BookingForm() {
                 disabled={isSubmitting}
                 className="btn-gold w-full sm:w-auto"
               >
-                <Send className="w-4 h-4" /> Send Enquiry
+                <Send className="w-4 h-4" /> {isSubmitting ? 'Sending…' : 'Send Enquiry'}
               </button>
             </div>
           </div>
+          </>
         )}
       </motion.form>
 

@@ -13,7 +13,7 @@ export default function GalleryPage() {
       <PageHero
         title="Gallery"
         subtitle="Images from our sessions and retreat programmes."
-        image="https://images.unsplash.com/photo-1483794344563-d27a8d18014e?w=1920"
+        image="/images/service-retreats.jpg"
       />
       <section className="section bg-white">
         <div className="container-luxe">

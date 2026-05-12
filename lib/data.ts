@@ -28,7 +28,7 @@ export const services: Service[] = [
       'Cognitive Behavioural Therapy (CBT)'
     ],
     icon: Brain,
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80',
+    image: '/images/service-psychotherapy.jpg',
     accent: 'from-teal-500/80 to-emerald-600/80'
   },
   {
@@ -44,7 +44,7 @@ export const services: Service[] = [
       'Personal development coaching'
     ],
     icon: Heart,
-    image: 'https://images.unsplash.com/photo-1521119989659-a83eee488004?w=1200&q=80',
+    image: '/images/service-relationships.jpg',
     accent: 'from-rose-500/80 to-pink-600/80'
   },
   {
@@ -60,7 +60,7 @@ export const services: Service[] = [
       'Community wellness outreach'
     ],
     icon: Users,
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80',
+    image: '/images/service-group.jpg',
     accent: 'from-amber-500/80 to-orange-600/80'
   },
   {
@@ -76,7 +76,7 @@ export const services: Service[] = [
       'Mental health policy advisory'
     ],
     icon: Building2,
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
+    image: '/images/service-corporate.webp',
     accent: 'from-sky-500/80 to-indigo-600/80'
   },
   {
@@ -92,7 +92,7 @@ export const services: Service[] = [
       'Holistic wellness rituals'
     ],
     icon: Mountain,
-    image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=1200&q=80',
+    image: '/images/service-retreats.jpg',
     accent: 'from-emerald-500/80 to-teal-700/80'
   },
   {
@@ -108,7 +108,7 @@ export const services: Service[] = [
       'Crisis check-ins'
     ],
     icon: Globe,
-    image: 'https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=1200&q=80',
+    image: '/images/about-2.jpg',
     accent: 'from-violet-500/80 to-fuchsia-600/80'
   },
   {
@@ -124,7 +124,7 @@ export const services: Service[] = [
       'Resource development'
     ],
     icon: BookOpen,
-    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80',
+    image: '/images/gallery-team-2.jpg',
     accent: 'from-amber-400/80 to-yellow-600/80'
   },
   {
@@ -140,7 +140,7 @@ export const services: Service[] = [
       'Bespoke seminar design'
     ],
     icon: GraduationCap,
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1200&q=80',
+    image: '/images/service-workshops.jpg',
     accent: 'from-cyan-500/80 to-blue-600/80'
   },
   {
@@ -156,7 +156,7 @@ export const services: Service[] = [
       'Research and advocacy'
     ],
     icon: Handshake,
-    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80',
+    image: '/images/service-partnerships.webp',
     accent: 'from-orange-500/80 to-red-600/80'
   }
 ];
@@ -217,45 +217,53 @@ export const retreats: Retreat[] = [
     description:
       'A deeply personal, one-on-one healing journey curated entirely around you, your story and your goals.',
     duration: '3–7 days',
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80'
+    image: '/images/service-retreats.jpg'
   },
   {
     title: 'Couples Retreat',
     description:
       'Reconnect, repair and renew with guided couples therapy framed by the restorative beauty of Victoria Falls.',
     duration: '4–5 days',
-    image: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1400&q=80'
+    image: '/images/service-relationships.jpg'
   },
   {
     title: 'Corporate Retreat',
     description:
       'Strategic wellness experiences for executive teams seeking clarity, cohesion and sustainable performance.',
     duration: '3–5 days',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80'
+    image: '/images/service-corporate.webp'
   },
   {
     title: 'Group Retreat',
     description:
       'Curated cohorts of 6–12 participants moving through transformation together in a held, intentional space.',
     duration: '5–7 days',
-    image: 'https://images.unsplash.com/photo-1543269664-647b9bbd96bf?w=1400&q=80'
+    image: '/images/service-group.jpg'
   }
 ];
 
-export const galleryImages: { src: string; category: 'Retreats' | 'Sessions' | 'Events' }[] = [
-  { src: '/images/hero-1.jpeg', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1400&q=80', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1400&q=80', category: 'Sessions' },
-  { src: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=1400&q=80', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1521119989659-a83eee488004?w=1400&q=80', category: 'Sessions' },
-  { src: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=1400&q=80', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1400&q=80', category: 'Events' },
-  { src: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400&q=80', category: 'Sessions' },
-  { src: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&q=80', category: 'Events' },
-  { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80', category: 'Events' },
-  { src: 'https://images.unsplash.com/photo-1543269664-647b9bbd96bf?w=1400&q=80', category: 'Retreats' },
-  { src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1400&q=80', category: 'Events' }
+export type GalleryItem = {
+  src: string;
+  type?: 'image' | 'video';
+  category: 'Retreats' | 'Sessions' | 'Events' | 'Moments';
+  caption?: string;
+  span?: 'wide' | 'tall' | 'large';
+};
+
+export const galleryImages: GalleryItem[] = [
+  { src: '/images/gallery-clip.mp4', type: 'video', category: 'Moments', caption: 'Behind the scenes', span: 'large' },
+  { src: '/images/service-retreats.jpg', category: 'Retreats', caption: 'Wellness Retreat', span: 'tall' },
+  { src: '/images/service-psychotherapy.jpg', category: 'Sessions', caption: 'Psychotherapy & Counselling' },
+  { src: '/images/service-group.jpg', category: 'Sessions', caption: 'Group Therapy', span: 'wide' },
+  { src: '/images/service-relationships.jpg', category: 'Sessions', caption: 'Relationship Support' },
+  { src: '/images/service-corporate.webp', category: 'Events', caption: 'Corporate Wellness' },
+  { src: '/images/service-workshops.jpg', category: 'Events', caption: 'Workshops & Seminars', span: 'wide' },
+  { src: '/images/service-partnerships.webp', category: 'Events', caption: 'Community Engagement' },
+  { src: '/images/about-1.jpg', category: 'Moments', caption: 'Reflection' },
+  { src: '/images/about-2.jpg', category: 'Moments', caption: 'Stillness', span: 'tall' },
+  { src: '/images/gallery-team-1.jpg', category: 'Moments', caption: 'Our Team' },
+  { src: '/images/gallery-team-2.jpg', category: 'Moments', caption: 'Outreach' },
+  { src: '/images/hero-1.jpeg', category: 'Retreats', caption: 'Victoria Falls', span: 'wide' }
 ];
 
 export const faqs: { q: string; a: string }[] = [

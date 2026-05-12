@@ -25,7 +25,7 @@ export default function RetreatsPage() {
       <PageHero
         title="Wellness Retreats"
         subtitle="Immersive healing experiences in the peaceful, restorative environment of Victoria Falls."
-        image="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920"
+        image="/images/service-retreats.jpg"
         overlay="gold"
       />
 

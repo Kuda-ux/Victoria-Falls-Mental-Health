@@ -14,7 +14,7 @@ export default function ReviewsPage() {
       <PageHero
         title="Reviews & Booking"
         subtitle="Hear from those who have walked this path — and take your first step."
-        image="https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=1920"
+        image="/images/about-1.jpg"
       />
 
       <section className="section bg-mist">

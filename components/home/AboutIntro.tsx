@@ -17,11 +17,22 @@ export default function AboutIntro() {
         >
           <div className="gold-frame relative aspect-[4/5] rounded-sm overflow-hidden">
             <Image
-              src="/images/hero-1.jpeg"
-              alt="Victoria Falls Mental Health"
+              src="/images/about-1.jpg"
+              alt="Victoria Falls Mental Health & Wellness"
               fill
+              sizes="(min-width:768px) 40vw, 90vw"
               className="object-cover"
               priority
+            />
+          </div>
+          {/* Floating secondary image */}
+          <div className="hidden md:block absolute -bottom-10 -left-10 w-48 h-56 rounded-2xl overflow-hidden shadow-luxe ring-4 ring-white">
+            <Image
+              src="/images/about-2.jpg"
+              alt="A space for healing"
+              fill
+              sizes="200px"
+              className="object-cover"
             />
           </div>
           <div className="absolute -bottom-6 -right-6 w-28 h-28 rounded-full bg-secondary/15 backdrop-blur-sm flex items-center justify-center">
